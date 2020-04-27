@@ -90,7 +90,11 @@ function save(list) {
 
 //Функция Загрузить список из хранилища
 function load() {
-  return JSON.parse(localStorage.getItem('todo'));
+  let data = JSON.parse(localStorage.getItem('todo'));
+  if (!data) {
+    data = [];
+  }
+  return data;
 }
 
 //Функция Удаления Дела
